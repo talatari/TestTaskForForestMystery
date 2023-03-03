@@ -3,26 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+[RequireComponent(typeof(Rigidbody2D))]
+
 public class HeroController : MonoBehaviour
 {
-    public Rigidbody2D _heroRigidBody;
-    public SpriteRenderer _heroSpriteRenderer;
-
-    private Vector2 _heroMoveVector;
-    private string _X = "Horizontal";
     [SerializeField] private float _heroSpeed = 300.0f;
     [SerializeField] private float _heroJumpPower = 5.0f;
     [SerializeField] private float _speed;
-
+	[SerializeField] private float _heroRunOn = 3.0f;
+    [SerializeField] private float _heroRunOff = 1.0f;
+    [SerializeField] private int MainMenuIndex = 0;
+	
+	private Vector2 _heroMoveVector;
+    private string _X = "Horizontal";
     private float _heroStartPositionY = -1.5f;
     private int _Y = 1;
-
     private float _heroRunRate;
-    [SerializeField] private float _heroRunOn = 3.0f;
-    [SerializeField] private float _heroRunOff = 1.0f;
-
-    [SerializeField] private int MainMenuIndex = 0;
-
+	
+	Rigidbody2D _heroRigidBody;
+    SpriteRenderer _heroSpriteRenderer;
+	
     void Start()
     {
         _heroRigidBody = GetComponent<Rigidbody2D>();
@@ -50,7 +50,7 @@ public class HeroController : MonoBehaviour
             JumpHero();
         }
 
-        if (Input.GetKeyDown("escape") == true)
+        if (Input.GetKeyDown(KeyCode.Escape) == true)
         {
             MenuGame();
         }
