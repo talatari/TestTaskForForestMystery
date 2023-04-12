@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public void PlayGame(int IndexScene)
+    public void PlayGame(int _indexScene)
     {
-        SceneManager.LoadScene(IndexScene);
+        SceneManager.LoadScene(_indexScene);
     }
 
     public void ExitGame()
@@ -15,11 +13,13 @@ public class MainMenu : MonoBehaviour
         Application.Quit();
     }
 
-    void Update()
+    private void FixedUpdate()
     {
         if (Input.GetKeyDown(KeyCode.Escape) == true)
         {
             ExitGame();
         }
     }
+
+
 }

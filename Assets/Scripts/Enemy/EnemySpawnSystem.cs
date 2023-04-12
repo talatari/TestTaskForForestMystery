@@ -15,4 +15,6 @@ public abstract class EnemySpawnSystem : MonoBehaviour
     }
 
     protected virtual void OnEnemyCollision(Enemy _enemy) { }
+
+
 }

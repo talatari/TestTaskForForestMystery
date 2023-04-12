@@ -12,4 +12,6 @@ public class EnemyController : MonoBehaviour
     {
         _enemy = GetComponent<Enemy>();
     }
+
+
 }

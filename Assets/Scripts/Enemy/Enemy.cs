@@ -16,4 +16,6 @@ public class Enemy : MonoBehaviour
 
         transform.eulerAngles = new Vector3(90, Random.Range(0, 360), 0);
     }
+
+
 }
